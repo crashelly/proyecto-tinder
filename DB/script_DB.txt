@@ -1,0 +1,119 @@
+
+create database  prueba_tinder;
+use prueba_tinder;
+
+-- ============================
+-- tabla de informacion de registro de usuarios
+
+CREATE TABLE  users_info(
+id_user int auto_increment primary key ,
+username varchar(50) ,
+name varchar(50),
+password varchar(50),
+birth_date date,
+num_phone  varchar(12),
+email varchar(50),
+gender varchar(50)
+-- match_conf boolean,
+-- llaves foraneas
+);
+ 
+-- ====================================================
+-- tigger de actualizacion 
+-- ====================================================
+create table users (
+	username varchar(50) primary key,
+    id_match int ,
+    match_conf boolean,
+-- de 400 caracteress a 2000
+    descrition varchar(2000),
+    city  varchar(20),
+    interest varchar(50),
+    cant_likes int   
+);
+ALTER TABLE users ADD estado varchar(100);
+
+CREATE TABLE foryou_page(
+id_recomen int auto_increment primary key,
+username varchar(50),
+ligue_username varchar(50),
+id_like int,
+id_dislike int
+);
+
+
+
+
+CREATE TABLE likes(
+	id_like int auto_increment primary key,
+    username varchar(50),
+    ligue_username varchar(50),
+    cant_likes int ,
+    id_recomen int ,
+    match_check boolean DEFAULT false
+);
+
+
+CREATE TABLE dislikes(
+	id_dislike int auto_increment primary key,
+    username varchar(50),
+    ligue_username varchar(50),
+    cant_likes int ,
+    id_recomen int 
+);
+
+
+
+CREATE TABLE user_match (
+ id_match int auto_increment primary key,
+ username varchar(50),
+ ligue_username varchar(50),
+ actionn boolean  DEFAULT false,
+ id_like int 
+);
+
+
+CREATE TABLE chat(
+id_mensaje int auto_increment primary key,
+id_match int ,
+mensaje varchar(3000),
+hora date,
+username varchar(50),
+ligue_username varchar(50)
+);
+
+
+-- users_info
+
+-- ALTER TABLE users_info ADD  FOREIGN KEY(username) REFERENCES users(username) ON UPDATE CASCADE;
+-- users
+
+-- foryou_page
+ALTER TABLE foryou_page ADD FOREIGN KEY(username) REFERENCES users(username) ON UPDATE CASCADE;
+ALTER TABLE foryou_page ADD FOREIGN KEY(ligue_username) REFERENCES users(username) ON UPDATE CASCADE;
+
+-- actualizar luego
+
+ALTER TABLE foryou_page ADD FOREIGN KEY(id_like) REFERENCES likes(id_like) ON UPDATE CASCADE;
+ALTER TABLE foryou_page ADD FOREIGN KEY(id_dislike) REFERENCES dislikes(id_dislike) ON UPDATE CASCADE;
+
+-- likes 
+ALTER TABLE likes ADD FOREIGN KEY(username) REFERENCES users(username) ON UPDATE CASCADE;
+ALTER TABLE likes ADD FOREIGN KEY(ligue_username) REFERENCES users(username) ON UPDATE CASCADE;
+ALTER TABLE likes ADD FOREIGN KEY(id_recomen) REFERENCES foryou_page(id_recomen) ON UPDATE CASCADE;
+
+-- dislikes
+ALTER TABLE dislikes ADD FOREIGN KEY(username) REFERENCES users(username) ON UPDATE CASCADE;
+ALTER TABLE dislikes ADD FOREIGN KEY(ligue_username) REFERENCES users(username) ON UPDATE CASCADE;
+ALTER TABLE dislikes ADD FOREIGN KEY(id_recomen) REFERENCES foryou_page(id_recomen) ON UPDATE CASCADE;
+
+-- user-match
+ALTER TABLE user_match ADD FOREIGN KEY(username) REFERENCES users(username) ON UPDATE CASCADE;
+ALTER TABLE user_match ADD FOREIGN KEY(ligue_username) REFERENCES users(username) ON UPDATE CASCADE;
+ALTER TABLE user_match ADD FOREIGN KEY( id_like) REFERENCES likes( id_like) ON UPDATE CASCADE;
+
+-- chat
+
+ALTER TABLE chat ADD FOREIGN KEY(username) REFERENCES users(username) ON UPDATE CASCADE;
+ALTER TABLE chat ADD FOREIGN KEY(ligue_username) REFERENCES users(username) ON UPDATE CASCADE;
+ALTER TABLE chat ADD FOREIGN KEY(id_match) REFERENCES user_match(id_match) ON UPDATE CASCADE;

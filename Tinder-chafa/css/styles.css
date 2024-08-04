@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(../img/fondo.png);
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center center; 
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-attachment: fixed; 
+}
+
+.perfil-encabezado {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.perfil-encabezado img {
+    width: 70px;
+    height: 70px;
+    margin-top: 2rem;
+    object-fit: cover;
+    border-radius: 100%; 
+}
+
+.perfil-encabezado h1 {
+    font-size: 24px;
+    margin: 5px 0;
+}
+
+.perfil-encabezado p {
+    color: #666;
+    font-size: 16px;
+    margin: 0;
+}
+
+.login-cont {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.login-forma {
+    margin-bottom: 20px;
+}
+
+.login-forma h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.login-forma form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-grupo {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-grupo label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-grupo input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 16px;
+}
+
+.input-grupo input:focus {
+    outline: none;
+    border-color: #fd267a;
+}
+
+button {
+    background-color: #fd267a;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #fd267a;
+}

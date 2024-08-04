@@ -1,0 +1,50 @@
+
+
+
+body {
+    background-image: url(/img/fondo.png); 
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.register-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+.register-container h2 {
+    text-align: center;
+}
+.register-container input,
+.register-container select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.register-container button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #be1fde;
+    color: #fff;
+    font-size: 16px;
+    margin-top: 10px;
+}
+.facebook-button {
+    background-color: #3b5998;
+}
+.logo {
+    display: block;
+    margin: 0 auto 20px; /* Centrar la imagen horizontalmente y agregar un margen inferior */
+    max-width: 150px; /* Ajustar el tamaño máximo de la imagen */
+    height: auto; /* Mantener la proporción de la imagen */
+}

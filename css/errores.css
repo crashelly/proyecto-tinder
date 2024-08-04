@@ -1,0 +1,115 @@
+body {
+  font-family: Arial, sans-serif;
+  background-image: url(../img/fondo.png);
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-position: center center; 
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-attachment: fixed; 
+}
+
+.perfil {
+  background-color: #fff;
+  width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  position: relative; /* Needed for absolute positioning */
+  transition: transform 0.3s ease; /* Smooth transform animation */
+}
+
+.perfil-encabezado {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.perfil-encabezado img {
+  width: 200px;
+  height: 200px;
+  margin-top: 2rem;
+  object-fit: cover;
+  border-radius: 10%; 
+}
+
+.perfil-encabezado h1 {
+  font-size: 24px;
+  margin: 5px 0;
+}
+
+.perfil-encabezado p {
+  color: #666;
+  font-size: 16px;
+  margin: 0;
+}
+
+.perfil-descripcion {
+  margin-bottom: 20px;
+}
+
+.perfil-descripcion h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.perfil-inter h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.perfil-inter ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.perfil-inter li {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.perfil-accion {
+  display: flex;
+  justify-content: center;
+}
+
+.like-boton, .dislike-boton {
+  background-color: #fff;
+  width: 100px; 
+  height: 100px; 
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.3s ease; /* Smooth transform animation */
+}
+
+.like-boton:hover, .dislike-boton:hover {
+  transform: scale(1.1); /* Scale up a bit on hover */
+}
+
+/* Keyframes for animation */
+@keyframes swipe-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes swipe-right {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(100%); }
+}
+
+/* Animation classes */
+.swipe-left {
+  animation: swipe-left 0.3s forwards; /* Forward animation */
+}
+
+.swipe-right {
+  animation: swipe-right 0.3s forwards; /* Forward animation */
+}

@@ -1,0 +1,152 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../img/fondo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-attachment: fixed;
+}
+
+.contenedores {
+    width: 100%;
+    max-width: 400px;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    position: relative;
+}
+
+.acce {
+    flex: 1;
+    overflow-y: auto;
+    background-color: #f2f2f2;
+    border-right: 1px solid #ccc;
+}
+
+.tab {
+    display: flex;
+    justify-content: space-around;
+    background-color: #74b5f1;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #ccc;
+}
+
+.tab button {
+    background-color: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    color: white;
+    font-size: 16px;
+}
+
+.tab button:hover {
+    background-color: #8edfff;
+    color: black;
+}
+
+.tab button.activar {
+    background-color: #8edfff;
+    color: black;
+}
+
+.tabcontenidos {
+    display: none;
+    padding: 10px;
+}
+
+.chat-caracteres {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ececec;
+    cursor: pointer;
+}
+
+.chat-caracteres:hover {
+    background-color: #e0e0e0;
+}
+
+.perfil-foto {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.chat-informacion h2 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.chat-informacion p {
+    margin: 0;
+    font-size: 12px;
+    color: #666;
+}
+
+.timestamp {
+    font-size: 10px;
+    color: #999;
+    margin-left: auto;
+}
+
+@media (max-width: 600px) {
+    .contenedores {
+        width: 100%;
+        height: 100%;
+    }
+
+    .tab button {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+
+    .chat-caracteres {
+        padding: 8px;
+    }
+
+    .perfil-foto {
+        width: 35px;
+        height: 35px;
+    }
+
+    .chat-informacion h2 {
+        font-size: 14px;
+    }
+
+    .chat-informacion p {
+        font-size: 10px;
+    }
+
+    .timestamp {
+        font-size: 8px;
+    }
+}
+
+
+.fade-out {
+    animation: fadeOut 0.3s forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}

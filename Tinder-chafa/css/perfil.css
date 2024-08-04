@@ -1,0 +1,157 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(../img/fondo.png);
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center center; 
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-attachment: fixed; 
+}
+
+.perfil-contenedor {
+    max-width: 400px;
+    width: 90%;
+    margin: 50px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+.perfil-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+.perfil-info {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.perfil-info h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #000000;
+}
+
+.perfil-info p {
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+.estado {
+    color: #000000;
+    font-style: italic;
+}
+
+form {
+    text-align: center;
+    margin-top: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 8px; 
+    margin-bottom: 15px;
+    border: 1px solid #ccc; 
+    border-radius: 20px;
+    font-size: 16px;
+}
+
+form input[type="text"]:focus {
+    outline: none;
+    border-color: #fd267a; 
+}
+
+button#actualizar-btn {
+    background-color: #fd267a;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease; 
+    font-size: 16px;
+}
+
+button#actualizar-btn:hover {
+    background-color: #d71b6e; 
+}
+
+button#actualizar-btn:focus {
+    outline: none;
+    border: 2px solid #fd267a; 
+}
+
+.perfil-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.perfil-buttons button {
+    background-color: #fd267a;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    font-size: 16px;
+    margin: 0 10px;
+}
+
+.perfil-buttons button:hover {
+    background-color: #d71b6e;
+}
+
+.perfil-buttons button:focus {
+    outline: none;
+    border: 2px solid #fd267a;
+}
+
+@media (max-width: 768px) {
+    .perfil-contenedor {
+        padding: 15px;
+    }
+
+    .perfil-info h1 {
+        font-size: 20px;
+    }
+
+    .perfil-info p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .perfil-contenedor {
+        padding: 10px;
+    }
+
+    .perfil-img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .perfil-info h1 {
+        font-size: 18px;
+    }
+
+    .perfil-info p {
+        font-size: 14px;
+    }
+}

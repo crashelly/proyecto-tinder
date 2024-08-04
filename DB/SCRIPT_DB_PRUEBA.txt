@@ -1,0 +1,42 @@
+create database tinder;
+use tinder;
+drop table users;
+-- tabla de usuarios
+create table if not exists users(
+id_user int auto_increment primary key ,
+username varchar(50) ,
+name varchar(50),
+password varchar(50),
+birth_date date,
+num_phone  varchar(12),
+email varchar(50),
+gender varchar(50)
+-- match_conf boolean,
+-- llaves foraneas
+);
+ -- ALTER TABLE users ADD id_match int;
+ alter table users drop foreign key id_match;
+
+drop table user_match;
+
+
+CREATE TABLE user_match(
+id_match int auto_increment,
+user_username varchar(50),
+ligue_username varchar(50),
+primary key(id_match)
+);
+-- Destructor llaves foraneas
+-- llaves foraneas
+ALTER TABLE user_match ADD FOREIGN KEY(user_username) REFERENCES users(username) ON UPDATE CASCADE;
+ALTER TABLE user_match ADD FOREIGN KEY(ligue_username) REFERENCES users(username) ON UPDATE CASCADE;
+
+-- ALTER TABLE users  ADD FOREIGN KEY(id_match)  REFERENCES  user_match(id_match) ON UPDATE CASCADE ;
+-- fin llaves foraneas 
+select * from user_match;
+select * from users;
+show tables;
+describe users;
+show databases;
+-- para seleccionar los matches que tiene el usuario 
+select ligue_username from user_match where user_username='jesus';

@@ -1,0 +1,279 @@
+function createPerfil($i_loop,$datos_1,$datos_2){
+    
+    ${"perfil$i_loop"} = new stdClass();
+ //   ${"perfil$i_loop"}-> img =  $datos_2['img_url'];
+    ${"perfil$i_loop"}-> id_user = $datos_1["id_user"];
+    ${"perfil$i_loop"}-> name =  $datos_1['name'];
+    ${"perfil$i_loop"}-> age =  AgeCalculator($datos_1['birth_date']) ;
+    ${"perfil$i_loop"}-> city = $datos_2['city'];
+    ${"perfil$i_loop"}-> estado = $datos_2['estado'];
+    ${"perfil$i_loop"}->aboutMe = $datos_2['descrition'];
+    ${"perfil$i_loop"}-> interest = $datos_2['interest'];
+    return  ${"perfil$i_loop"};
+//añado el objeto al array    
+}
+
+
+
+
+/*   //crear el array con los objetos vacios
+      function createArrayWithObjects(n) {
+         const arr = [];
+         for (let i = 0; i < n; i++) {
+              arr.push({});
+         }
+            return arr;
+        }
+        var profiles = createArrayWithObjects(max_Id);
+        console.log(profiles.length());
+     
+        var profiles = ('<?php print_r($perfiles_JSON) ;?>');
+        console.log(profiles,typeof(profiles));
+        var i = ('<?php print_r($a)?>;');
+        //conseguir todos los ids del arreglo 
+        var array_ids = (<?php echo json_encode($array_ids)?>);
+            console.log(array_ids);
+        document.addEventListener('DOMContentLoaded', function() {
+    
+    
+    
+      let perfiles = [];
+     
+
+      for (i ; i >= 0; i--) {
+        let e = 0;
+    // variables para llenar el objeto
+        let name =<?php print_r($perfiles_array['0']->name);?>;
+        let age;
+        let city;
+        let estado;
+        let aboutMe;
+        let interests;
+        console.log( <?php print_r($perfiles_array['0']->name);?>);
+        let perfil = {
+            //img:
+            //nombre: <?php print_r($perfiles_array[getNextValue($array_ids)]->name);?>,
+           // nombre: name,
+           /* edad: profiles[i].edad,
+            descripcion: profiles[i].descripcion,
+            gustos: profiles[i].gustos*/
+        }
+        perfil.nombre = name;
+    
+        document.getElementById('nombre').textContent = perfil.nombre;
+        e++;
+      }
+
+     
+    let currentIndex = 0;
+    const profileContainer = document.getElementById('profile-container');
+    var max_Id =<?php echo $max_Id?>;
+    function loadProfile(index) {
+       // for(let i = 0; i <max_Id; i++) {
+            var  profile = profiles[index];
+                //profileContainer.querySelector('img').src = profile.img;
+                profileContainer.querySelector('h1').textContent = profile.name;
+                profileContainer.querySelector('p').textContent = `${profile.age} ,${profile.city} `;
+                profileContainer.querySelector('.perfil-descripcion p').textContent = profile.aboutMe;
+                profileContainer.querySelector('.perfil-inter ul').textContent = profile.interest;
+               
+        //}
+    }
+
+      
+
+    function handleSwipe(direction) {
+        profileContainer.classList.add(direction);
+        setTimeout(() => {
+            currentIndex = (currentIndex + 1) % profiles.length;
+            loadProfile(currentIndex);
+            profileContainer.classList.remove(direction);
+        }, 300);
+    }
+
+    document.querySelector('.like-boton').addEventListener('click', () => {
+        handleSwipe('swipe-right');
+        setTimeout(() => {
+            window.location.href = 'its_a_match.html'; 
+        }, 300); 
+    });
+
+    document.querySelector('.dislike-boton').addEventListener('click', () => {
+        handleSwipe('swipe-left');
+    });
+
+    
+    loadProfile(currentIndex);
+});
+*/
+
+
+
+<?php print_r($perfiles_array['0']->name);?>
+
+
+
+
+
+      for (i ; i >= 0; i--) {
+        let e = 0;
+    // variables para llenar el objeto
+        let name =<?php print_r($perfiles_array['0']->name);?>;
+        let age;
+        let city;
+        let estado;
+        let aboutMe;
+        let interests;
+        console.log( <?php print_r($perfiles_array['0']->name);?>);
+        let perfil = {
+            //img:
+            //nombre: <?php print_r($perfiles_array[getNextValue($array_ids)]->name);?>,
+           // nombre: name,
+           /* edad: profiles[i].edad,
+            descripcion: profiles[i].descripcion,
+            gustos: profiles[i].gustos*/
+        }
+        
+        e++;
+      }
+
+        //   var mensaje ="<?php print_r(getDataUsers($con,1,$id_actual_user,"name"));?>" ;
+
+      //  console.log(mensaje);
+     //   var max_Id =<?php echo $max_Id?>;
+      //  var user_ID =<?php echo  $id_actual_user?>;
+    // => crear el array con los objetos vacios
+      /* function createArrayWithObjects(n) {
+             const arr = [];
+        for (let i = 0; i < n; i++) {
+              arr.push({});
+         }
+            return arr;
+        }
+     /*  var profiles = createArrayWithObjects(max_Id); 
+      console.log(profiles);
+        */
+       /* var profiles  = "<?php echo $perfiles_JSON?>";
+        console.log(profiles);
+        var i = ('<?php print_r($a)?>;');
+        //conseguir todos los ids del arreglo 
+        var array_ids = (<?php echo json_encode($array_ids)?>);
+            console.log(array_ids);
+        document.addEventListener('DOMContentLoaded', function() {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*<script>
+
+   
+    // => variables para rellenar los campos
+     // variables para llenar el objeto
+    // var  name, age,city,estado ,aboutMe,interests;
+
+  /*
+    for (let i = 1; i <=max_Id ; i++) {
+        if(i != user_ID && i <= max_Id){
+             (function(i) {
+            window[`perfil${i}`] = getDataUsers($con,$i);;
+            })(i);
+        }  
+       
+    }
+
+   
+
+const profiles = [
+        {
+            img: 'img/1-intro-photo-final.jpg',
+            nombre: 'John Doe',
+            edad: '29, Los Angeles',
+            descripcion: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero justo, a ultricies dui ultricies sed.',
+            gustos: ['...', '...', '...']
+        },
+        {
+            img: 'img/attractive-1869761_640.jpg',
+            nombre: 'Jane Smith',
+            edad: '27, New York',
+            descripcion: 'Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta.',
+            gustos: ['...', '...', '...']
+        },
+        {
+          img: 'img/450_1000.jpeg',
+          nombre: 'Will Smith',
+          edad: '55, New York',
+          descripcion: 'Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta.',
+          gustos: ['...', '...', '...']
+      },
+    ];
+
+  //var profile=[];
+/*
+ 
+      
+    //se resetean las variables
+        name ='';
+        age ='';
+        city ='';
+        estado ='';
+        aboutMe ='';
+        interests ='';
+    
+   
+
+    
+     
+    let currentIndex = 0;
+    const profileContainer = document.getElementById('profile-container');
+
+    function loadProfile(index) {
+       // for(let i = 0; i <max_Id; i++) {
+            var  profile = profiles[index];
+                //profileContainer.querySelector('img').src = profile.img;
+                profileContainer.querySelector('h1').textContent = profile.name;
+                profileContainer.querySelector('p').textContent = `${profile.age} ,${profile.city} `;
+                profileContainer.querySelector('.perfil-descripcion p').textContent = profile.aboutMe;
+                profileContainer.querySelector('.perfil-inter ul').textContent = profile.interest;
+               
+        //}
+    }
+
+      
+
+    function handleSwipe(direction) {
+        profileContainer.classList.add(direction);
+        setTimeout(() => {
+            currentIndex = (currentIndex + 1) % profiles.length;
+            loadProfile(currentIndex);
+            profileContainer.classList.remove(direction);
+        }, 300);
+    }
+
+    document.querySelector('.like-boton').addEventListener('click', () => {
+        handleSwipe('swipe-right');
+        setTimeout(() => {
+            window.location.href = 'its_a_match.html'; 
+        }, 300); 
+    });
+
+    document.querySelector('.dislike-boton').addEventListener('click', () => {
+        handleSwipe('swipe-left');
+    });
+
+    
+    loadProfile(currentIndex);
+*/

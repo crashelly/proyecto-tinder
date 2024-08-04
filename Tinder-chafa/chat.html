@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat</title>
+  <link rel="stylesheet" href="CSS/estilo_chat.css">
+</head>
+<body>
+  <div class="chat-container">
+    <div class="chat-header">
+      <img src="img/1-intro-photo-final.jpg" alt="">
+      <div class="header-text">
+        <h3>Nombre del Usuario</h3>
+        <span>En línea</span>
+      </div>
+    </div>
+    
+    <div class="chat-messages" id="chat-messages">
+      <!-- Mensajes van aquí -->
+    </div>
+    
+    <div class="chat-input">
+      <form id="form-mensaje">
+        <input type="text" id="mensaje-input" placeholder="Escribe un mensaje...">
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var formMensaje = document.getElementById('form-mensaje');
+      
+      formMensaje.addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        var mensajeInput = document.getElementById('mensaje-input');
+        var mensajeText = mensajeInput.value.trim();
+        
+        if (mensajeText === '') {
+          return;
+        }
+        
+        enviarMensaje(mensajeText); // Llama a la función para enviar el mensaje
+        
+        // Limpiar el input después de enviar el mensaje
+        mensajeInput.value = '';
+      });
+    });
+
+    function enviarMensaje(mensaje) {
+      var mensajesContainer = document.getElementById('chat-messages');
+      
+      // Crear contenedor del mensaje enviado
+      var messageSentContainer = document.createElement('div');
+      messageSentContainer.className = 'message-container message-sent-container';
+
+      // Crear mensaje enviado
+      var nuevoMensaje = document.createElement('div');
+      nuevoMensaje.className = 'message message-sent';
+      nuevoMensaje.innerHTML = '<div class="message-content">' +
+                                  '<span>' + mensaje + '</span>' +
+                                '</div>';
+                                  
+      messageSentContainer.appendChild(nuevoMensaje);
+      mensajesContainer.appendChild(messageSentContainer);
+      
+      // Hacer scroll hacia abajo para mostrar el último mensaje
+      mensajesContainer.scrollTop = mensajesContainer.scrollHeight;
+      
+      // Simular respuesta del usuario después de un tiempo (para demostración)
+      setTimeout(function() {
+        recibirMensaje('¡Mensaje recibido!'); // Simula una respuesta del usuario
+      }, 1000); // Simula una respuesta después de 1 segundo
+    }
+
+    function recibirMensaje(mensaje) {
+      var mensajesContainer = document.getElementById('chat-messages');
+      
+      // Crear contenedor del mensaje recibido
+      var messageReceivedContainer = document.createElement('div');
+      messageReceivedContainer.className = 'message-container message-received-container';
+      
+      // Crear mensaje recibido
+      var nuevoMensaje = document.createElement('div');
+      nuevoMensaje.className = 'message message-received';
+      nuevoMensaje.innerHTML = '<div class="message-content">' +
+                                  '<span>' + mensaje + '</span>' +
+                                '</div>';
+                                  
+      messageReceivedContainer.appendChild(nuevoMensaje);
+      mensajesContainer.appendChild(messageReceivedContainer);
+      
+      // Hacer scroll hacia abajo para mostrar el último mensaje
+      mensajesContainer.scrollTop = mensajesContainer.scrollHeight;
+    }
+  </script>
+</body>
+</html>

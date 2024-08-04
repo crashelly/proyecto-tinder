@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Tinder</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="login-cont">
+        <div class="perfil-encabezado">
+            <img src="img/tinder-app-logo-tinder-app-icon-free-free-vector.jpg" alt="foto perfil">
+        </div>
+        <div class="login-forma">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="input-grupo">
+                    <label for="username">Usuario</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-grupo">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            if (username === 'usuario' && password === 'contraseña') {
+                alert('Inicio de sesión exitoso!') ;
+                
+            } else {
+                alert('Usuario o contraseña incorrectos. Por favor, inténtalo de nuevo.');
+                
+            }
+        });
+    </script>
+</body>
+</html>

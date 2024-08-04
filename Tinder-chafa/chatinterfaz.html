@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tinder Contactos</title>
+    <link rel="stylesheet" href="css/interfazchat.css">
+</head>
+<body>
+    <div class="contenedores">
+        <div class="acce">
+            <div id="Chats" class="tabcontenidos">
+                <div class="chat-caracteres" onclick="redirectToChat()">
+                    <img src="perfil1.jpg" alt="perfil" class="perfil-foto">
+                    <div class="chat-informacion">
+                        <h2>Contacto 1</h2>
+                        <p>Último mensaje...</p>
+                    </div>
+                    <span class="timestamp">20:00</span>
+                </div>
+                <div class="chat-caracteres" onclick="redirectToChat()">
+                    <img src="perfil2.jpg" alt="perfil" class="perfil-foto">
+                    <div class="chat-informacion">
+                        <h2>Contacto 2</h2>
+                        <p>Último mensaje...</p>
+                    </div>
+                    <span class="timestamp">19:45</span>
+                </div>
+            </div>
+        </div>
+        <div class="tab">
+            <button class="tabenlaces" onclick="openTab(event, 'Chats')" id="abrir">Chats</button>
+            <button class="tabenlaces" onclick="openTab(event, 'Matchs')">Matchs</button>
+        </div>
+    </div>
+
+    <script>
+        function openTab(evt, tabNombre) {
+            if (tabNombre === 'Matchs') {
+                document.body.classList.add('fade-out');
+                setTimeout(function() {
+                    window.location.href = 'PerfilUsuario.html';
+                }, 300); // Matchs animation duration
+                return; 
+            }
+
+            var i, tabcontenidos, tabenlaces;
+            tabcontenidos = document.getElementsByClassName("tabcontenidos");
+            for (i = 0; i < tabcontenidos.length; i++) {
+                tabcontenidos[i].style.display = "none";
+            }
+            tabenlaces = document.getElementsByClassName("tabenlaces");
+            for (i = 0; i < tabenlaces.length; i++) {
+                tabenlaces[i].className = tabenlaces[i].className.replace(" activar", "");
+            }
+            document.getElementById(tabNombre).style.display = "block";
+            evt.currentTarget.className += " activar";
+        }
+
+        function redirectToChat() {
+            document.body.classList.add('fade-out');
+            setTimeout(function() {
+                window.location.href = 'chat.html';
+            }, 300); 
+        }
+
+        document.getElementById("abrir").click();
+    </script>
+</body>
+</html>
